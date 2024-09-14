@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.cs-w {
+    width: 15% !important;
+}
+
+.cs-h {
+    min-height: 55vh;
+}
+
+.cs-h-2 {
+    max-height: 55vh;
+}
+
+.fixed-height {
+    height: 125px;
+}
+
+/*Background*/
+.cs-bg {
+    background-color: #EEEEEE !important;
+}
+
+.cs-bg-2 {
+    background-color: #FFFFFF !important;
+}
+
+.cs-bg-3 {
+    background-color: #000000 !important;
+}
+
+/*Font*/
+.cs-fw-600 {
+    font-weight: 600 !important;
+}
+
+.cs-fc {
+    color: #000000 !important;
+}
+
+.cs-fc-2 {
+    color: #EEEEEE !important;
+}
+
+.cs-fs {
+    font-size: 15px !important;
+}
+
+/*Buttons*/
+.cs-btn, .cs-dropdown-btn {
+    transition: .3s !important;
+}
+
+.cs-btn:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.cs-btn-2 {
+    transition: .3s !important;
+    border-color: #000000 !important;
+    aspect-ratio: 8 / 1 !important;
+}
+
+.cs-btn-2:hover, .cs-dropdown-btn:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.cs-btn-3 {
+    border-color: #000000 !important;
+    transition: .3s !important;
+}
+
+.cs-btn-3:hover {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.cs-link {
+    border-color: transparent !important;
+    transition: .3s !important;
+}
+
+.cs-link:hover {
+    border-color: #000000 !important;
+}
+
+.btn-close {
+    box-shadow: none !important;
+}
+
+.cs-drop-item {
+    transition: .3s !important;
+}
+
+.cs-drop-item:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/*Input*/
+.cs-input {
+    border-color: #000000 !important;
+}
+
+/*Basket*/
+.cs-pos {
+    position: relative;
+}
+
+.cs-basket {
+    position: absolute;
+    top: 75% !important;
+    right: 7% !important;
+    z-index: 5;
+    width: 40% !important;
+}
+
+/*Scrollbar*/
+.cs-scroll {
+    scrollbar-color: #000000 transparent;
+    scrollbar-width: thin;
+}
+
+/*Images*/
+.cs-img {
+    width: 15% !important;
+}
+
+.cs-img-2 {
+    opacity: 50% !important;
+    transition: .3s !important;
+}
+
+.cs-card:hover .cs-img-2{
+    opacity: 100% !important;
+}
+
+@media (max-width: 991px) {
+    .cs-w {
+        width: 100% !important;
+    }
+
+    .cs-basket {
+        right: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .cs-img {
+        width: 10% !important;
+    }
+}

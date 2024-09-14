@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "index": 1,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Захист стека з отвором під кабель USB, закритий.",
+      "price": 80
+    },
+    {
+      "index": 2,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Кріплення антени VTX та управління 30 мм.",
+      "price": 80
+    },
+    {
+      "index": 3,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Кріплення антени VTX, 30 мм. Підходить до VTX з короткими подовжувачами антен.",
+      "price": 40
+    },
+    {
+      "index": 4,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Кріплення GoPro.",
+      "price": 50
+    },
+    {
+      "index": 5,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Кріплення основної камери 19х19 мм, розміщення камери у глибині рами.",
+      "price": 40
+    },
+    {
+      "index": 6,
+      "image": "https://th.bing.com/th/id/OIG2.7BrVr2IdKfCnqstc8qz8?w=1024&h=1024&rs=1&pid=ImgDetMain",
+      "model": "Mark4 7",
+      "description": "Кріплення антени управління та розміщення GPS модуля 22 мм.",
+      "price": 40
+    }
+  ]
+}
