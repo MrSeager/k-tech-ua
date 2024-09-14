@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/k-tech-ua/static/css/main.82cfcd40.css",
+    "main.js": "/k-tech-ua/static/js/main.dd374e18.js",
+    "static/js/453.55d5d914.chunk.js": "/k-tech-ua/static/js/453.55d5d914.chunk.js",
+    "index.html": "/k-tech-ua/index.html",
+    "static/media/Logo_56dp.svg": "/k-tech-ua/static/media/Logo_56dp.f021b1337981010465c612c92821e526.svg",
+    "main.82cfcd40.css.map": "/k-tech-ua/static/css/main.82cfcd40.css.map",
+    "main.dd374e18.js.map": "/k-tech-ua/static/js/main.dd374e18.js.map",
+    "453.55d5d914.chunk.js.map": "/k-tech-ua/static/js/453.55d5d914.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82cfcd40.css",
+    "static/js/main.dd374e18.js"
+  ]
+}
