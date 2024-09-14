@@ -3,10 +3,11 @@ import React, { useState, useEffect, FC } from 'react';
 import BasketItem from './BasketItem.tsx';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Button, Offcanvas, Row, Col } from 'react-bootstrap';
+import { Container, Button, Offcanvas, Row, Col, Toast, ToastContainer } from 'react-bootstrap';
 //Icons
 import { MdOutlineShoppingCart, MdOutlineDeleteForever } from "react-icons/md";
-
+//Images
+import ImgLogo from '../Images/Logo_56dp.svg';
 interface BasketItemsProps {
     index: number;
     image: string;
@@ -20,10 +21,11 @@ type BasketProps = {
     basketItems: BasketItemsProps[];
     setBasketItems: (basketItems: BasketItemsProps[]) => void;
     handleClose: () => void; 
-    show: boolean
+    show: boolean;
+    setShowNot: (showNot: boolean) => void;
 }
 
-const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, show }) => {
+const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, show, setShowNot }) => {
     const [sum, setSum] = useState(0);
     
     const handleCopy = () => {
@@ -31,16 +33,17 @@ const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, sho
         let textToCopy = '';
     
         containers.forEach(container => {
-            const modelDescription = (container.querySelector('p.cs-fs') as HTMLElement)?.innerText || '';
-            const amount = (container.querySelector('h2.h5:nth-of-type(2)') as HTMLElement)?.innerText || '';
-            const price = (container.querySelector('h2.h5:nth-of-type(1)') as HTMLElement)?.innerText || '';
+            const modelDescription = (container.querySelector('p.cs-fs') as HTMLElement)?.innerText + ' ' || '';
+            const amount = 'Кількість: ' + (container.querySelector('h2.h5:nth-of-type(2)') as HTMLElement)?.innerText + ' ' || '';
+            const price = 'Ціна: ' + (container.querySelector('h2.h5:nth-of-type(1)') as HTMLElement)?.innerText + '. ' || '';
     
-            textToCopy += `${modelDescription}\n${price}\n${amount}\n\n`;
+            textToCopy += `${modelDescription}\n${amount}\n${price}\n\n`;
     });
 
     navigator.clipboard.writeText(textToCopy)
             .then(() => {
-            alert('Надішліть скопійований текст на пошту або будь-який месенджер, посилання на які надані нижче ');
+                setShowNot(true);
+            //alert('Надішліть скопійований текст на пошту або будь-який месенджер, посилання на які надані нижче ');
         })
             .catch(err => {
             console.error('Failed to copy text: ', err);

@@ -6,7 +6,7 @@ import ShopNavBar from './ShopNavBar.tsx';
 import ShopItemsPanel from './ShopItemsPanel.tsx';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Dropdown } from 'react-bootstrap';
+import { Container, Dropdown, ToastContainer, Toast } from 'react-bootstrap';
 //Axios
 import axios from 'axios';
 //Animation
@@ -29,31 +29,22 @@ const ShopMain: FC = () => {
     const [items, setItems] = useState<ItemsType[]>([]);
     const [basketItems, setBasketItems] = useState<BasketItemsProps[]>([]);
     const [selectedModel, setSelectedModel] = useState<string>('УСІ РАМИ');
+    const [showNot, setShowNot] = useState(false);
+
+    const toggleShowNot = () => setShowNot(!showNot);
 
     useEffect(() => {
-        axios.get('https://raw.githubusercontent.com/MrSeager/shop-test/main/src/data.json').then((response) => {
+        axios.get('https://raw.githubusercontent.com/MrSeager/k-tech-ua/main/src/data.json').then((response) => {
             setItems(response.data.items);
         });
-    }, []);
-
-    useEffect(() => {
-        console.log('Saving basketItems to localStorage:', basketItems);
-        localStorage.setItem('basketItems', JSON.stringify(basketItems));
-    }, [basketItems]);
-
-    useEffect(() => {
-        const savedBasketItems = localStorage.getItem('basketItems');
-        if (savedBasketItems) {
-            console.log('Loading basketItems from localStorage:', savedBasketItems);
-            setBasketItems(JSON.parse(savedBasketItems));
-        }
     }, []);
 
     return (
         <Container fluid className='p-0 cs-bg min-vh-100 d-flex flex-column justify-content-between pt-5'>
             <ShopNavBar  
                 basketItems={basketItems}
-                setBasketItems={setBasketItems} />
+                setBasketItems={setBasketItems}
+                setShowNot={setShowNot} />
             <Container fluid className='px-5 py-3 mt-5 d-flex flex-row justify-content-end'>
                 <Dropdown className='shadow cs-w border' title='Model'>
                     <Dropdown.Toggle className='cs-dropdown-btn rounded-0 rounded-top w-100 border-0 cs-bg-2 cs-fc'>{selectedModel}</Dropdown.Toggle>
@@ -70,6 +61,15 @@ const ShopMain: FC = () => {
                 setBasketItems={setBasketItems}
                 selectedModel={selectedModel} />
             <ShopFooter />
+            <ToastContainer position='middle-center'>
+                <Toast show={showNot} onClose={toggleShowNot} className='cs-toast border-0 shadow cs-bg-2 cs-fc'>
+                    <Toast.Header className='cs-bg-2 cs-fc'>
+                        <strong className="me-auto">K.Tech.UA</strong>
+                        <small>Далі</small>
+                    </Toast.Header>
+                    <Toast.Body>Надішліть скопійований текст на пошту або будь-який месенджер, посилання на які надані нижче</Toast.Body>
+                </Toast>
+            </ToastContainer>
         </Container>
     );
 }

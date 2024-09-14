@@ -24,9 +24,10 @@ interface BasketItemsProps {
 type ShopNavBarProps = {
     basketItems: BasketItemsProps[];
     setBasketItems: (basketItems: BasketItemsProps[]) => void;
+    setShowNot: (showNot: boolean) => void;
 }
 
-const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems }) => {
+const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems, setShowNot }) => {
     const [show, setShow] = useState<boolean>(false);
 
     const handleClose = () => setShow(false);
@@ -45,7 +46,8 @@ const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems }) => {
                 basketItems={basketItems} 
                 setBasketItems={setBasketItems}
                 handleClose={handleClose}
-                show={show} />
+                show={show}
+                setShowNot={setShowNot} />
         </Navbar>
     );
 }
