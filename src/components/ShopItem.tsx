@@ -53,7 +53,7 @@ const ShopItem: FC<ShopItemProps> = ({ items, image, model, description, price, 
 
     return (
         <Card data-aos="fade-up" className='gap-3 pb-4 border-0 shadow h-100 justify-content-between cs-card'>
-            <Card.Img variant='top' src={image} alt='item' className='cs-img-2' />
+            <Card.Img variant='top' src={image} alt='item' />
             <Card.Text className='px-4 h-100'><b>{model}</b> - {description}</Card.Text>
             <Row className='mx-4 align-items-center'>
                 <Col xs={3} className='text-start p-0'>

@@ -24,10 +24,9 @@ interface BasketItemsProps {
 type ShopNavBarProps = {
     basketItems: BasketItemsProps[];
     setBasketItems: (basketItems: BasketItemsProps[]) => void;
-    setShowNot: (showNot: boolean) => void;
 }
 
-const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems, setShowNot }) => {
+const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems }) => {
     const [show, setShow] = useState<boolean>(false);
 
     const handleClose = () => setShow(false);
@@ -36,7 +35,7 @@ const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems, setShowN
     AOS.init();
 
     return (
-        <Navbar data-aos="fade-down" fixed='top' className='shadow cs-bg-2 w-100 d-flex flex-lg-row flex-md-row flex-column align-items-center justify-content-between px-md-5 px-xs-2 py-md-4 py-xs-2 cs-pos'>
+        <Navbar data-aos="fade-down" fixed='top' className='shadow cs-bg-2 w-100 d-flex flex-lg-row flex-md-row flex-column align-items-center justify-content-between px-md-5 px-xs-2 py-md-3 py-xs-2 cs-pos'>
             <Navbar.Brand href='#home' className='cs-fw-600 ms-5 d-flex flex-row align-items-center justify-content-md-start justify-content-center'><Image fluid src={ImgLogo} alt='logo' className='cs-img me-2' />K.TECH.UA</Navbar.Brand>
             <Container className='me-5 d-flex flex-row justify-content-lg-end justify-content-md-end justify-content-center'>
                 <Navbar.Text>м. Київ, +38(068)548-94-58</Navbar.Text>
@@ -46,8 +45,7 @@ const ShopNavBar: FC<ShopNavBarProps> = ({ basketItems, setBasketItems, setShowN
                 basketItems={basketItems} 
                 setBasketItems={setBasketItems}
                 handleClose={handleClose}
-                show={show}
-                setShowNot={setShowNot} />
+                show={show} />
         </Navbar>
     );
 }

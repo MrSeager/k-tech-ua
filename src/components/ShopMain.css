@@ -20,6 +20,11 @@ body {
     height: 125px;
 }
 
+.cs-ratio {
+    height: 100%;
+    aspect-ratio: 1 / 1 !important;
+}
+
 /*Background*/
 .cs-bg {
     background-color: #EEEEEE !important;
@@ -130,20 +135,6 @@ body {
 /*Images*/
 .cs-img {
     width: 15% !important;
-}
-
-.cs-img-2 {
-    opacity: 50% !important;
-    transition: .3s !important;
-}
-
-.cs-card:hover .cs-img-2{
-    opacity: 100% !important;
-}
-
-/*Notification*/
-.cs-toast {
-    
 }
 
 @media (max-width: 991px) {

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, FC } from 'react';
 //Components
 import BasketItem from './BasketItem.tsx';
+import ShopNotificationPanel from './ShopNotificationPanel.tsx';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Button, Offcanvas, Row, Col, Toast, ToastContainer } from 'react-bootstrap';
+import { Container, Button, Offcanvas, Row, Col } from 'react-bootstrap';
 //Icons
 import { MdOutlineShoppingCart, MdOutlineDeleteForever } from "react-icons/md";
-//Images
-import ImgLogo from '../Images/Logo_56dp.svg';
+
 interface BasketItemsProps {
     index: number;
     image: string;
@@ -22,12 +22,14 @@ type BasketProps = {
     setBasketItems: (basketItems: BasketItemsProps[]) => void;
     handleClose: () => void; 
     show: boolean;
-    setShowNot: (showNot: boolean) => void;
 }
 
-const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, show, setShowNot }) => {
+const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, show }) => {
     const [sum, setSum] = useState(0);
-    
+    const [showNot, setShowNot] = useState(false);
+
+    const toggleShowNot = () => setShowNot(!showNot);
+
     const handleCopy = () => {
         const containers = document.querySelectorAll('.text-container');
         let textToCopy = '';
@@ -92,6 +94,9 @@ const Basket: FC<BasketProps> = ({ basketItems, setBasketItems, handleClose, sho
                     <Button disabled={basketItems.length === 0} onClick={handleCopy} className='cs-btn-3 py-3 h-100 w-100 cs-fs cs-bc cs-bg-3'>СКОПІЮВАТИ СПИСОК У БУФЕР ОБМІНУ</Button>
                 </Col>
             </Row>
+            <ShopNotificationPanel 
+                showNot={showNot} 
+                toggleShowNot={toggleShowNot} />
         </Offcanvas>
     );
 }
