@@ -5,7 +5,7 @@ import { Container, Button, Row, Col } from 'react-bootstrap';
 
 const ShopFooter: FC = () => {
     return (
-        <Container fluid className='cs-bg-2 mt-5 py-5 shadow'>
+        <Container fluid className='cs-bg-2 mt-4 py-5 shadow'>
             <Row className='px-5'>
                 <Col lg={6} md={12} className='mb-lg-0 mb-3 d-flex flex-row align-items-center justify-content-lg-start justify-content-center text-lg-start text-center'>
                     <p className='m-0'>Розробник сайту</p>
